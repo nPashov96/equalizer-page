@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'IBM Plex Sans';
+    text-decoration: none;
+    list-style: none;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+body {
+    background-image: url(assets/bg-main-desktop.png);
+    background-position: right top -35px, right -180px top -260px;
+    padding-top: 62px;
+    padding-bottom: 92px;
+}
+
+img,
+picture {
+    display: block;
+}
+
+.grid {
+    display: grid;
+    min-width: fit-content;
+}
+
+.logo {
+    width: 146.09px;
+    height: 32px;
+}
+
+.site-header img {
+    margin-left: 10.384em;
+    margin-bottom: 127px;
+}
+
+.container {
+    display: flex;
+}
+
+.container h1 {
+    font-size: 5.5em;
+    font-weight: bold;
+    max-width: 1015px;
+    max-height: 176px;
+    margin-left: 165px;
+    line-height: 88px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2.5em;
+}
+
+.info p {
+    width: 825px;
+    height: 102px;
+    margin-left: 164.5px;
+    font-size: 1.25em;
+}
+
+.offer {
+    display: grid;
+    border-radius: 0.75em;
+    justify-self: center;
+    align-self: center;
+    margin-top: 6.75em;
+    margin-left: 10.313em;
+    grid-template-columns: [first] 102px [col2-start] 234px [col3-start] 78px [col4-start] 155px [col5-start] 77px [col6-start] 367px [col7-start] 95px [col-end];
+    grid-template-rows: [row1-start] 173px [row2-start] 40px [row3-start] 90px [row4-start] 338px [row5-start] 172px [row6-start] 115px [end-row];
+}
+
+.illustration {
+    width: 312px;
+    height: 642px;
+    grid-area: row1-start / col2-start / col5-start / col4-start;
+    z-index: 2;
+}
+
+.bg-pattern-2 {
+    width: 312px;
+    height: 428px;
+    z-index: 1;
+    grid-area: row2-start / col3-start / row5-start / col6-start;
+}
+
+.product {
+    width: 446px;
+    height: 625px;
+    background-color: #FA7453;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 58px 59px 48px 54px;
+    color: #FCFAF9;
+    border-radius: 12px;
+    grid-area: row4-start / col5-start / end-row / col6-start;
+    z-index: 2;
+}
+
+.product h2 {
+    font-size: 2.5em;
+}
+
+.description {
+    font-size: 1.25em;
+    line-height: 34px;
+}
+
+.price-container {
+    display: inline-flex;
+    align-items: center;
+}
+
+.price {
+    font-size: 4.063em;
+    font-weight: bold;
+}
+
+.price-month {
+    font-size: 1.25em;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 16px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 14px;
+    width: 333px;
+    height: 61px;
+    border-radius: 12px;
+    border: none;
+    font-weight: bold;
+    font-size: 1.125em;
+    cursor: pointer;
+}
+
+.button img {
+    width: 17.08px;
+    height: 20px;
+    margin-right: 7.92px;
+}
+
+.ios {
+    background-color: #191826;
+    color: #FCFAF9;
+}
+
+.ios:hover { 
+    background-color: #66E2DC;
+    color: #FCFAF9;
+}
+
+.android {
+    background-color: #FCFAF9;
+    color: #191826;
+}
+
+.android:hover {
+    background-color: #FFB964;
+    color: #191826; 
+}
+
+.dark-area {
+    grid-area: row3-start / first / row6-start / col-end;
+    background-color: #191826;
+    border-radius: 12px;
+    z-index: 0;
+}
+
+.site-footer {
+    margin-top: 87px;
+    margin-left: 165px;
+ display: grid;
+ max-width: 1110px;
+ max-height: 79px;
+ grid-template-columns: [footer-col1] 146.09px  [footer-col2] 137.76px [footer-col3] 366px [footer-col4] 359px [footer-col5] 100px [footer-col-end];
+ grid-template-rows: [footer-row1] 29px [footer-row2] 20px [footer-row3] 30px [foooter-row-end];
+}
+
+.footer-img {
+    grid-area: footer-row1 / footer-col1 / footer-row2 / footer-col2;
+}
+
+.contact {
+    max-width: 366px;
+    font-size: 1em;
+    grid-area: footer-row1 / footer-col3 / footer-row-end / footer-col4;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    grid-area: footer-row2 / footer-col5 / footer-row3 / footer-col-end;
+}
