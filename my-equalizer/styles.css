@@ -7,205 +7,609 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'IBM Plex Sans';
+    font-family: 'IBM Plex Sans';
     text-decoration: none;
     list-style: none;
 }
 
-html, body {
+html,
+body {
     width: 100%;
     min-height: 100vh;
+    overflow-x: hidden;
+    margin: 0%;
 }
 
-body {
-    background-image: url(assets/bg-main-desktop.png);
-    background-position: right top -35px, right -180px top -260px;
-    padding-top: 62px;
-    padding-bottom: 92px;
-}
-
-img,
-picture {
-    display: block;
-}
-
-.grid {
-    display: grid;
-    min-width: fit-content;
-}
-
-.logo {
-    width: 146.09px;
-    height: 32px;
-}
-
-.site-header img {
-    margin-left: 10.384em;
-    margin-bottom: 127px;
-}
-
-.container {
-    display: flex;
-}
-
-.container h1 {
-    font-size: 5.5em;
-    font-weight: bold;
-    max-width: 1015px;
-    max-height: 176px;
-    margin-left: 165px;
-    line-height: 88px;
-}
-
-.info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 2.5em;
-}
-
-.info p {
-    width: 825px;
-    height: 102px;
-    margin-left: 164.5px;
-    font-size: 1.25em;
-}
-
-.offer {
-    display: grid;
-    border-radius: 0.75em;
-    justify-self: center;
-    align-self: center;
-    margin-top: 6.75em;
-    margin-left: 10.313em;
-    grid-template-columns: [first] 102px [col2-start] 234px [col3-start] 78px [col4-start] 155px [col5-start] 77px [col6-start] 367px [col7-start] 95px [col-end];
-    grid-template-rows: [row1-start] 173px [row2-start] 40px [row3-start] 90px [row4-start] 338px [row5-start] 172px [row6-start] 115px [end-row];
-}
-
-.illustration {
-    width: 312px;
-    height: 642px;
-    grid-area: row1-start / col2-start / col5-start / col4-start;
-    z-index: 2;
-}
-
-.bg-pattern-2 {
-    width: 312px;
-    height: 428px;
-    z-index: 1;
-    grid-area: row2-start / col3-start / row5-start / col6-start;
-}
-
-.product {
-    width: 446px;
-    height: 625px;
-    background-color: #FA7453;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 58px 59px 48px 54px;
-    color: #FCFAF9;
-    border-radius: 12px;
-    grid-area: row4-start / col5-start / end-row / col6-start;
-    z-index: 2;
-}
-
-.product h2 {
-    font-size: 2.5em;
-}
-
-.description {
-    font-size: 1.25em;
-    line-height: 34px;
-}
-
-.price-container {
-    display: inline-flex;
-    align-items: center;
-}
-
-.price {
-    font-size: 4.063em;
-    font-weight: bold;
-}
-
-.price-month {
-    font-size: 1.25em;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 16px;
-}
-
-.button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 15px;
-    padding-bottom: 14px;
-    width: 333px;
-    height: 61px;
-    border-radius: 12px;
-    border: none;
-    font-weight: bold;
-    font-size: 1.125em;
-    cursor: pointer;
-}
-
-.button img {
-    width: 17.08px;
-    height: 20px;
-    margin-right: 7.92px;
-}
-
-.ios {
-    background-color: #191826;
-    color: #FCFAF9;
-}
-
-.ios:hover { 
-    background-color: #66E2DC;
-    color: #FCFAF9;
-}
-
-.android {
-    background-color: #FCFAF9;
-    color: #191826;
-}
-
-.android:hover {
-    background-color: #FFB964;
-    color: #191826; 
-}
-
-.dark-area {
-    grid-area: row3-start / first / row6-start / col-end;
+.offer::before {
+    content: '';
+    position: absolute;
+    min-height: 37.5rem;
+    inset-inline: 0;
     background-color: #191826;
     border-radius: 12px;
-    z-index: 0;
+    background-repeat: no-repeat;
+    background-image: url(assets/bg-pattern-2.svg);
 }
 
-.site-footer {
-    margin-top: 87px;
-    margin-left: 165px;
- display: grid;
- max-width: 1110px;
- max-height: 79px;
- grid-template-columns: [footer-col1] 146.09px  [footer-col2] 137.76px [footer-col3] 366px [footer-col4] 359px [footer-col5] 100px [footer-col-end];
- grid-template-rows: [footer-row1] 29px [footer-row2] 20px [footer-row3] 30px [foooter-row-end];
+.landing {
+    display: grid;
+    grid-template-areas: "header" "main" " footer";
 }
 
-.footer-img {
-    grid-area: footer-row1 / footer-col1 / footer-row2 / footer-col2;
+.social:hover {
+    filter: invert(47%) sepia(98%) saturate(1295%) hue-rotate(341deg) brightness(94%) contrast(102%);
 }
 
-.contact {
-    max-width: 366px;
-    font-size: 1em;
-    grid-area: footer-row1 / footer-col3 / footer-row-end / footer-col4;
+@media (min-width: 90em) {
+    /* .landing {
+        grid-template-areas: "header" "main" " footer";
+    } */
+
+    body {
+        padding-top: 62px;
+        padding-bottom: 92px;
+        background-image: url(assets/bg-main-desktop.png);
+        background-position: right top -35px, right -180px top -260px;
+    }
+
+    .site-header {
+        grid-area: "header";
+        margin-left: 165px;
+    }
+
+    .first-pattern {
+        display: inline;
+        position: relative;
+        float: right;
+        transform: translate(0rem, -6rem);
+    }
+
+    .info {
+        margin-top: 7.938em;
+        /* margin-left: 165px; */
+        max-width: 60.188em;
+    }
+
+    .info h1 {
+        font-size: 5.5em;
+        font-weight: bold;
+        max-width: 20ch;
+        max-height: 11em;
+        line-height: 88px;
+    }
+
+    .info p {
+        margin-top: 2.5em;
+        max-width: 825px;
+        max-height: 102px;
+        font-size: 1.25em;
+        margin-bottom: 321px;
+    }
+
+    main {
+        grid-template-areas: main;
+        margin-left: 165px;
+        margin-right: 165px;
+        margin-top: 6.75rem;
+    }
+
+    .offer {
+        display: flex;
+        position: relative;
+    }
+
+    .offer::before {
+        background-position: left 42% top -30%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-size: auto;
+
+    }
+
+    .offer>.illustration {
+        max-width: 19.5em;
+        max-height: 40.125em;
+        position: relative;
+        max-width: 19.5rem;
+        margin-inline: 6.375rem auto;
+        transform: translateY(-213px);
+        z-index: 2;
+    }
+
+    .bg-pattern-2 {
+        max-width: 19.5em;
+        max-height: 29.25em;
+    }
+
+    .product {
+        max-width: 27.875em;
+        max-height: 39.063em;
+        background-color: #FA7453;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 58px 59px 48px 54px;
+        color: #FCFAF9;
+        border-radius: 12px;
+        position: relative;
+        transform: translate(-95px, 90px);
+        z-index: 2;
+    }
+
+    .product h2 {
+        font-size: 2.5em;
+    }
+
+    .description {
+        font-size: 1.25em;
+        line-height: 34px;
+    }
+
+    .price-container {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .price {
+        font-size: 4.063em;
+        font-weight: bold;
+    }
+
+    .price-month {
+        font-size: 1.25em;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 16px;
+    }
+
+    .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 15px;
+        padding-bottom: 14px;
+        width: 333px;
+        height: 61px;
+        border-radius: 12px;
+        border: none;
+        font-weight: bold;
+        font-size: 1.25em;
+        cursor: pointer;
+        transition: all 0.4s ease;
+    }
+
+    .button img {
+        width: 17.08px;
+        height: 20px;
+        margin-right: 7.92px;
+    }
+
+    .ios {
+        background-color: #191826;
+        color: #FCFAF9;
+    }
+
+    .ios:hover {
+        background-color: #66E2DC;
+        color: #FCFAF9;
+    }
+
+    .android {
+        background-color: #FCFAF9;
+        color: #191826;
+    }
+
+    .android:hover {
+        background-color: #FFB964;
+        color: #191826;
+    }
+
+    .site-footer {
+        grid-template-areas: footer;
+        display: grid;
+        margin-top: 202px;
+        margin-left: 165px;
+        margin-right: 165px;
+
+    }
+
+    .site-footer>img {
+        margin-bottom: 2rem;
+    }
+
+    .flex {
+        display: flex;
+        max-width: 6.25em;
+        max-height: 1.25em;
+        margin-top: 1.875em;
+        margin-bottom: 1.875em;
+        justify-content: space-between;
+        justify-self: end;
+        gap: 1.25rem;
+        grid-column: 4;
+        grid-row: 1;
+    }
+
+    .contact {
+        max-width: 22.875em;
+        font-size: 1em;
+        grid-row: 1 / span 2;
+        grid-column: 2 / span 2;
+    }
+
 }
 
-.flex {
-    display: flex;
-    justify-content: space-between;
-    grid-area: footer-row2 / footer-col5 / footer-row3 / footer-col-end;
+@media (min-width: 47em) and (max-width: 89em) {
+
+    body {
+        padding-top: 62px;
+        padding-bottom: 85px;
+        background-image: url(assets/bg-main-tablet.png);
+        background-position: top left -300px;
+        background-repeat: no-repeat;
+    }
+
+    .site-header {
+        grid-area: header;
+        margin-left: 33px;
+    }
+
+    .first-pattern {
+        display: inline;
+        max-width: 16.667em;
+        max-height: 25em;
+        position: relative;
+        float: right;
+        transform: translate(2rem, -6rem);
+    }
+
+    .info {
+        margin-top: 5.938em;
+    }
+
+    .info h1 {
+        font-size: 4em;
+        font-weight: bold;
+        line-height: 64px;
+    }
+
+    .info p {
+        margin-top: 1.75em;
+        font-size: 1.125em;
+        line-height: 1.75em;
+        max-width: 514px;
+        max-height: 112px;
+        text-align: justify;
+    }
+
+    main {
+        grid-template-areas: main;
+        margin-top: 15.563em;
+        margin-left: 33px;
+        margin-right: 39px;
+    }
+
+    .offer {
+        display: flex;
+        position: relative;
+    }
+
+    .offer::before {
+        background-position: left 55% top -33%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-size: auto;
+    }
+
+    .offer>.illustration {
+        max-width: 16.875em;
+        max-height: 34.75em;
+        position: relative;
+        margin-inline: 4rem auto;
+        transform: translateY(-138px);
+        z-index: 1;
+    }
+
+    .product {
+        width: 24.938em;
+        max-height: 34.125em;
+        background-color: #FA7453;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 48px 49px 48px 48px;
+        color: #FCFAF9;
+        border-radius: 12px;
+        position: relative;
+        transform: translate(-95px, 150px);
+        z-index: 2;
+    }
+
+    .product h2 {
+        font-size: 2em;
+    }
+
+    .description {
+        font-size: 1.125em;
+        line-height: 28px;
+    }
+
+    .price-container {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .price {
+        font-size: 4.063em;
+        font-weight: bold;
+    }
+
+    .price-month {
+        font-size: 1.25em;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 16px;
+    }
+
+    .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 15px;
+        padding-bottom: 14px;
+        max-width: 296px;
+        height: 61px;
+        border-radius: 12px;
+        border: none;
+        font-weight: bold;
+        font-size: 1.25em;
+        cursor: pointer;
+        transition: all 0.4s ease;
+    }
+
+    .button img {
+        width: 17.08px;
+        height: 20px;
+        margin-right: 7.92px;
+    }
+
+    .ios {
+        background-color: #191826;
+        color: #FCFAF9;
+    }
+
+    .ios:hover {
+        background-color: #66E2DC;
+        color: #FCFAF9;
+    }
+
+    .android {
+        background-color: #FCFAF9;
+        color: #191826;
+    }
+
+    .android:hover {
+        background-color: #FFB964;
+        color: #191826;
+    }
+
+    .site-footer {
+        grid-template-areas: footer;
+        display: grid;
+        margin-top: 183px;
+        margin-right: 39px;
+        margin-left: 33px;
+    }
+
+    .flex {
+        display: flex;
+        max-width: 6.25em;
+        max-height: 1.25em;
+        margin-top: 1.875em;
+        margin-bottom: 1.875em;
+        justify-content: space-between;
+        justify-self: end;
+        gap: 1.25rem;
+        grid-column: 4;
+        grid-row: 2;
+    }
+
+    .contact {
+        max-width: 22.875em;
+        margin-top: 32px;
+        font-size: 1em;
+        grid-row: 2 / span 2;
+        grid-column: 1 / span 2;
+    }
+
+}
+
+@media (max-width: 47em) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+        background-image: url(assets/bg-main-tablet.png);
+        background-position: top;
+        background-repeat: no-repeat;
+        height: 100%;
+        position: relative;
+    }
+
+    .site-header {
+        grid-area: header;
+        margin-top: 40px;
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+
+    .first-pattern {
+        display: none;
+    }
+
+    .info {
+        margin-top: 5.938em;
+    }
+
+    .info h1 {
+        font-size: 2.5em;
+        font-weight: bold;
+        line-height: 48px;
+    }
+
+    .info p {
+        margin-top: 20px;
+        text-align: start;
+        font-size: 1em;
+        line-height: 26px;
+    }
+
+    main {
+        grid-template-areas: main;
+        margin-top: 10.375em;
+        flex: 1;
+    }
+
+    .offer {
+        display: flex;
+        position: relative;
+    }
+
+    .offer::before {
+        background-position: left 55% top -33%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-size: auto;
+    }
+
+    .illustration {
+        max-width: 13.061em;
+        max-height: 26.875em;
+        position: absolute;
+        margin: 0 auto;
+        transform: translate(80px, -98px);
+        z-index: 1;
+    }
+
+    .product {
+        max-width: 23.438em;
+        max-height: 34.125em;
+        background-color: #FA7453;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 48px 37px 36px 48px;
+        margin: 0 auto;
+        margin-bottom: 397px;
+        color: #FCFAF9;
+        border-radius: 12px;
+        position: relative;
+        transform: translateY(380px);
+        z-index: 2;
+    }
+
+    .product h2 {
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    .description {
+        margin-top: 12px;
+        font-size: 1.125em;
+        line-height: 28px;
+    }
+
+    .price-container {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .price {
+        font-size: 4.063em;
+        font-weight: bold;
+    }
+
+    .price-month {
+        font-size: 1.25em;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 16px;
+    }
+
+    .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 15px;
+        padding-bottom: 14px;
+        max-width: 296px;
+        height: 61px;
+        border-radius: 12px;
+        border: none;
+        font-weight: bold;
+        font-size: 1.25em;
+        cursor: pointer;
+        transition: all 0.4s ease;
+    }
+
+    .button img {
+        width: 17.08px;
+        height: 20px;
+        margin-right: 7.92px;
+    }
+
+    .ios {
+        background-color: #191826;
+        margin-bottom: 16px;
+        margin-top: 32px;
+        color: #FCFAF9;
+    }
+
+    .ios:hover {
+        background-color: #66E2DC;
+        color: #FCFAF9;
+    }
+
+    .android {
+        background-color: #FCFAF9;
+        color: #191826;
+    }
+
+    .android:hover {
+        background-color: #FFB964;
+        color: #191826;
+    }
+
+    .site-footer {
+        display: grid;
+        grid-template-areas: "footer";
+        position: relative;
+        margin-top: 64px;
+        margin-right: 24px;
+        margin-left: 24px;
+        margin-bottom: 80px;
+    }
+
+    .site-footer .flex {
+        display: flex;
+        justify-content: center;
+        max-width: 6.25em;
+        gap: 1.25rem;
+        margin-top: 4em;
+        justify-content: space-between;
+        gap: 1.25rem;
+        grid-column: 1;
+        grid-row: 5;
+    }
+
+    .contact {
+        max-width: 22.875em;
+        margin-top: 2em;
+        font-size: 1em;
+        grid-row: 2 / span 2;
+        grid-column: 1 / span 2;
+    }
 }
